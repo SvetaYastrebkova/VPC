@@ -33,5 +33,7 @@ module "vpc" {
     "karpenter.sh/discovery"              = local.name
   }
   
-  tags = local.tags
+   tags = merge(local.tags, {
+    "karpenter.sh/discovery" = local.name
+  })
 }
